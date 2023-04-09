@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Membership Subscription Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+  <style>
+    
+    .top {
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 80px;
+      background-color: whitesmoke;
+      width: 100vw;
+      border-bottom: #5E5E5E solid 3px;
+
+    }
+
+    .nishan {
+      line-height: 70px;
+      height: 70px;
+      align-items: center;
+      margin-left: 40vw;
+      padding-bottom: 4vh;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: larger;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button[type="submit"] {
+      background-color: #7409E7;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #48E5C2;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <a href="index.html"><img src="Logos\LoopHub logo.png" class="nishan"></a>
+    
+  </div>
+  <form action="#" method="post">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="plan">Select a Plan:</label>
+    <select id="plan" name="plan" required>
+      <option value="">Select your prefered plan</option>
+      <option value="monthly-basic">1-Month Premium (&#8377; 300/month)</option>
+      <option value="monthly-premium">Yearly Premium (&#8377; 3,000/year)</option>
+    </select>
+
+    <a href=".\index.html"><button type="submit">Subscribe</button></a>
+  </form>
+</body>
+
+</html>

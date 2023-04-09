@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Loophub</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="top">
+        <img style="margin-right: 5vw" src="Logos\LoopHub logo.png" height="50" width="232" alt="logo" onclick="">
+        <div class="search">
+            <input type="text" id="query" placeholder="Search">
+        </div>
+        <svg id="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#5E5E5E" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </svg>
+        <div class="genre">
+            <a href="index.html" id="gen">Home</a>
+        </div>
+        <a href="member.html">
+            <div class="sub">
+                Membership
+            </div>
+        </a>
+
+        <div class="profile">
+            <button id="signin-btn">Sign In <span id="user-email" style="display: none;"></span></button>
+
+            <div class="modal">
+                <div class="modal-content" style="line-height: 20px;">
+                    <span class="close">&times;</span>
+
+                    <form style="margin-top: 40px;">
+                        <center><img src="Logos/icons8-account-96.png" alt="Avatar" class="avatar"
+                                style="height: 48px; width: 48px; margin-right: 0px;"></center>
+                        <br><br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Try admin@admin.com" name="email" required>
+                        <br><br>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" placeholder="Try admin" name="password" required>
+                        <br><br>
+                        <center><input type="submit" value="Sign in"></center>
+
+                    </form>
+                </div>
+            </div>
+
+            <script>
+                var modal = document.querySelector(".modal");
+
+                // Get the button that opens the modal
+                var button = document.querySelector("#signin-btn");
+
+                // Get the <span> element that closes the modal
+                var close = document.querySelector(".close");
+
+                // When the user clicks on the button, open the modal
+                button.onclick = function () {
+                    modal.style.display = "block";
+                };
+
+                // When the user clicks on <span> (x), close the modal
+                close.onclick = function () {
+                    modal.style.display = "none";
+                };
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                };
+
+                // When the user submits the form, prevent default behavior and authenticate the user
+                var form = document.querySelector("form");
+                form.onsubmit = function (event) {
+                    event.preventDefault();
+                    var email = document.querySelector("#email").value;
+                    var password = document.querySelector("#password").value;
+
+                    // Perform authentication here
+                    if (email === "admin@admin.com" && password === "admin") {
+                        // Authentication successful
+                        console.log("Authentication successful");
+                        modal.style.display = "none";
+                        button.textContent = email.split('@')[0];
+                        var signInButton = document.querySelector("#signin-btn");
+
+                        // Invert the button colors
+                        signInButton.style.backgroundColor = "#48E5C2";
+                        signInButton.style.color = "#000000";
+
+                    } else {
+                        // Authentication failed
+                        console.log("Authentication failed");
+                        alert("Incorrect email or password");
+                    }
+                };
+            </script>
+        </div>
+    </div>
+    <br>
+    <div class="new" style="margin-left: 5px;">
+        <br>
+        <b>
+            <h1 class="heading1">
+                Genre
+            </h1>
+        </b>
+        <div class="orig">
+            <div class="one">
+                <ul>
+                    <a href="#anime">
+                        <li>Anime</li>
+                    </a>
+                    <a href="#food">
+                        <li>Food</li>
+                    </a>
+                    <a href="#music">
+                        <li>Music</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="two">
+                <ul>
+                    <a href="#beauty">
+                        <li>Beauty</li>
+                    </a>
+                    <a href="#gaming">
+                        <li>Gaming</li>
+                    </a>
+                    <a href="#sports">
+                        <li>Sports</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="three">
+                <ul>
+                    <a href="#comedy">
+                        <li>Comedy</li>
+                    </a>
+                    <a href="#movies">
+                        <li>Movies</li>
+                    </a>
+                    <a href="#travel">
+                        <li>Travel</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <div id="anime">
+            <br><br>
+            <center>
+                <hr style="width: 90vw;">
+            </center><br><br><br>
+            <h2 style="font-weight: lighter;">Anime</h2>
+            <br>
+            <div class="genre-items">
+                <div class="items">
+                    <center><img src="Logos/3ba8e07776041325e2a67856465546e5.jpg"
+                            style="height: 192px; border-radius: 10px;">
+                        <br>My Hero Academia <br>
+                        Season 6
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/f9fc4a8ba85d427693c96c86b22c89c2.jpg"
+                            style="height: 192px; border-radius: 10px;"><br>
+                        Demon Slayer: <br>Swordsmith Village Arc</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/82c101b11f9c31d56487724dd94e1067.jpg"
+                            style="height: 192px; border-radius: 10px;"><br>MASHLE: MAGIC <br>AND MUSCLES</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/a7c61834a7f277f2820176d6d3aefcaf.jpg"
+                            style="height: 192px; border-radius: 10px;"><br>Dr. STONE<br> New World</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/572dac41513c6286fac80797fdd16ad4.jpg"
+                            style="height: 192px; border-radius: 10px;"><br>Vinland Saga<br>Season 2</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/422670a855efae8d8d8fafb59d43c197.jpg"
+                            style="height: 192px; border-radius: 10px;"><br>ONE PIECE</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/ede641090c1bcfaa10be65f73c805e9c.jpg"
+                            style="height: 192px; border-radius: 10px;"><br>Boruto:<br> Naruto Next Generations</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/4e439e9a2859ba3a77723c72fa08c339.jpg"
+                            style="height: 192px; border-radius: 10px;"><br>SPY x FAMILY<br>Cour 2</center>
+                </div>
+            </div>
+        </div>
+        <div id="beauty">
+            <br><br>
+            <center>
+                <hr style="width: 90vw;">
+            </center><br><br><br>
+            <h2 style="font-weight: lighter;">Beauty</h2>
+            <br>
+            <div class="genre-items">
+                <div class="items">
+                    <center><img src="Logos/beauty 1.jpg" style="height: 192px; border-radius: 10px;">
+                        <br>Makeup Tips
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/beautty 8.jpg" style="height: 192px; border-radius: 10px;"><br>
+                        Tips from Euphoria</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/beauty 9.jpg" style="height: 192px; border-radius: 10px;"><br>New Mascaras
+                        in the market</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/beauty 10.jpg" style="height: 192px; border-radius: 10px;"><br>Eye-shadows
+                    </center>
+                </div>
+
+            </div>
+        </div>
+        <div id="comedy">
+            <br><br>
+            <center>
+                <hr style="width: 90vw;">
+            </center><br><br><br>
+            <h2 style="font-weight: lighter;">Comedy</h2>
+            <br>
+            <div class="genre-items">
+
+                <div class="items">
+                    <center><img src="Logos/comedy dog meme.webp" style="height: 192px; border-radius: 10px;"><br>
+                        DOGECOIN</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/comedy family guy.jpg"
+                            style="height: 192px; border-radius: 10px;"><br>Family Guy Clips
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/comedy mr bean.jpg" style="height: 192px; border-radius: 10px;"><br>Best of
+                        Mr. Bean</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/comedy stand up.jpg" style="height: 192px; border-radius: 10px;"><br>Standup
+                    </center>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="food">
+            <br><br>
+            <center>
+                <hr style="width: 90vw;">
+            </center><br><br><br>
+            <h2 style="font-weight: lighter;">Food</h2>
+            <br>
+            <div class="genre-items">
+                <div class="items">
+                    <center><img src="Logos/WhatsApp Image 2023-04-09 at 11.59.58.jpg"
+                            style="height: 192px; width: 240px; border-radius: 10px;">
+                        <br>Curries
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos\food 2.jpg" style="height: 192px; border-radius: 10px;"><br>
+                        Lunch Combos</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos\food 3.jpg" style="height: 192px; border-radius: 10px;"><br>Fish Recipes
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos\food 5.jpg" style="height: 192px; border-radius: 10px;"><br>Summer Smoothies
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos\food 4.jpg" style="height: 192px; border-radius: 10px;"><br>Diwali Sweets
+                    </center>
+                </div>
+
+            </div>
+        </div>
+        <div id="gaming">
+            <br><br>
+            <center>
+                <hr style="width: 90vw;">
+            </center><br><br><br>
+            <h2 style="font-weight: lighter;">Gaming</h2>
+            <br>
+            <div class="genre-items">
+                <div class="items">
+                    <center><img src="Logos/gaming1.jpg"
+                            style="height: 192px; border-radius: 10px;"><br>
+                        PUBG <br>BATTLEGROUNDS</center>
+                </div>
+                
+                <div class="items">
+                    <center><img src="Logos/gaming3.jpg"
+                            style="height: 192px; border-radius: 10px;"><br>Call of Duty: Modern Warfare II
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/gaming4.jpeg"
+                            style="height: 192px; border-radius: 10px;"><br>Valorant
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/gaming5.jpg"
+                            style="height: 192px; border-radius: 10px;"><br>Last of Us</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/gaming6.jpeg"
+                            style="height: 192px; border-radius: 10px;"><br>Elden Ring</center>
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="movies">
+            <br><br>
+            <center>
+                <hr style="width: 90vw;">
+            </center><br><br><br>
+            <h2 style="font-weight: lighter;">Movies</h2>
+            <br>
+            <div class="genre-items">
+                <div class="items">
+                    <center><img src="Logos/movie 1.jpg" style="height: 192px; border-radius: 10px;">
+                        <br>John Wick
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/movie 2.jpg" style="height: 192px; border-radius: 10px;"><br>
+                        Terminator</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/movie 3.jpg" style="height: 192px; border-radius: 10px;"><br>Gladiator
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/movie 4.jpg" style="height: 192px; border-radius: 10px;"><br>Maleficent
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <div id="music">
+            <br><br>
+            <center>
+                <hr style="width: 90vw;">
+            </center><br><br><br>
+            <h2 style="font-weight: lighter;">Music</h2>
+            <br>
+            <div class="genre-items">
+                <div class="items">
+                    <center><img src="Logos/music 1.jpg" style="height: 192px; border-radius: 10px;">
+                        <br>Music Concerts
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/music 2.jpg" style="height: 192px; border-radius: 10px;"><br>
+                        Record Players</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/music 3.jpg" style="height: 192px; border-radius: 10px;"><br>Vinyl Records
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/music 4.jpg" style="height: 192px; border-radius: 10px;"><br>Guitar Chords
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/music 5.jpg" style="height: 192px; border-radius: 10px;"><br>Piano Lessons
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/music 6.jpg" style="height: 192px; border-radius: 10px;"><br>Acoustic Guitar
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <div id="sports">
+            <br><br>
+            <center>
+                <hr style="width: 90vw;">
+            </center><br><br><br>
+            <h2 style="font-weight: lighter;">Sports</h2>
+            <br>
+            <div class="genre-items">
+                <div class="items">
+                    <center><img src="Logos/sports 2.jpg" style="height: 192px; border-radius: 10px;">
+                        <br>Boxing
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos\sports 1.jpg" style="height: 192px; border-radius: 10px;"><br>
+                        Tennis</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/football.webp" style="height: 192px; border-radius: 10px;"><br>Football
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos\sports 4.jpg" style="height: 192px; border-radius: 10px;"><br>Track&Field
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos\sports 3.jpg" style="height: 192px; border-radius: 10px;"><br>Basketball
+                    </center>
+                </div>
+
+            </div>
+        </div>
+        <div id="travel">
+            <br><br>
+            <center>
+                <hr style="width: 90vw;">
+            </center><br><br><br>
+            <h2 style="font-weight: lighter;">Travel</h2>
+            <br>
+            <div class="genre-items">
+                <div class="items">
+                    <center><img src="Logos/travel 1.jpeg" style="height: 192px; border-radius: 10px;">
+                        <br>Backpacking Tips
+                    </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/travel 2.jpeg" style="height: 192px; border-radius: 10px;"><br>
+                        Best Tropical Islands</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/travel 3.jpg" style="height: 192px; border-radius: 10px;"><br>Travel
+                        Packages </center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/travel 4.webp" style="height: 192px; border-radius: 10px;"><br>Setting up
+                        your passport</center>
+                </div>
+                <div class="items">
+                    <center><img src="Logos/travel 5.avif" style="height: 192px; border-radius: 10px;"><br>Heritage
+                        Sites</center>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <footer id="footer">
+        <div class="ab">
+            <img src="Logos\LoopHub logo.png" id="logo">
+            <div class="a_1">
+
+                Copyright &#169; LoopHub All Rights Reserved
+                <br>
+                Contact:-
+            </div>
+            <div class="a_2">
+                <div class="a_2_1">
+                    <a href="#"><img src="Logos\ig dark 2.png" class="logo"></a>
+                </div>
+                <div class="a_2_2">
+                    <a href="#"><img src="Logos\Telegram dark.png" class="logo"></a>
+                </div>
+                <div class="a_2_3">
+                    <a href="#"><img src="Logos\Facebook dark.png" class="logo"></a>
+                </div>
+            </div>
+        </div>
+        <div class="b">
+            <h1 id="heading">About Us</h1>
+            <br>
+            <p> LoopHub is top of free streaming website, where to watch movies online
+                free without registration
+                required. With a big database and great features, we're confident
+                LoopHub is the best free movies
+                online website in the space that you can't simply miss!
+            </p>
+            <br>
+            <p id="small">This site does not store any files on our server, we only
+                linked to the media which is
+                hosted
+                on 3rd party services.</p>
+        </div>
+        <div class="c">
+            <h1 class="h_foot">HELP</h1>
+            <a href="help.html">
+                <p class="p_foot">How to sign Up</p>
+            </a>
+            <a href="#">
+                <p class="p_foot">What is LoopHub ?</p>
+            </a>
+            <a href="#">
+                <p class="p_foot">Parental Control</p>
+            </a>
+            <a href="#">
+                <p class="p_foot">Share feedback</p>
+            </a>
+
+        </div>
+    </footer>
+</body>
+
+</html>
